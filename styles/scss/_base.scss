@@ -37,8 +37,22 @@ body{
     background-color: $orange;
     width:100%;
     height:100%;
+    transition: height 1s ease-in;
     //border-radius: 3px;
   }
+}
+
+.highlight{
+  color: $red;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+
+
+.icon.sun{
+  color: white!important;
+  margin: auto;
 }
 
 .terminal{

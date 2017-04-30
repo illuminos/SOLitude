@@ -1,17 +1,62 @@
 @include border-box-sizing;
 
+.wrapper{
+  display:flex;
+  height: 100vh;
+}
+
 .container{
+  flex:1;
   display:flex;
   flex-direction: column;
-  align-items:center;
-  justify-content:center;
+  //align-items:center;
+  //justify-content:center;
 }
+
+#main{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
 
 #Solitude{
   margin-top:50px;
 }
 
+.logo{
+  h3{
+
+  }
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  color:#e6e6e6;
+  justify-content: center;
+}
+
+#hiseas-inner{
+  flex:1;
+  display:flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: space-around;
+}
+
+#hiseas{
+  flex:1;
+  display:flex;
+  flex-direction: column;
+  //justify-content: space-around;
+}
+
 #location{
+  .location.label{
+    width: 100%;
+    color: #e6e6e6;
+    font-size: 2em
+  }
   width: 500px;
   text-align:center;
   .label{

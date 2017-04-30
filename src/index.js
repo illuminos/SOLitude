@@ -16,11 +16,14 @@ import App from './components/app';
 
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+import data from '../data/appliances.json';
 
 const initialState = {
     location: {
         isLoading: false
-    }
+    },
+    data: data,
+    battery: 100
 };
 
 ReactDOM.render(
