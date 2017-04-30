@@ -17,10 +17,14 @@ import App from './components/app';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
-
+const initialState = {
+    location: {
+        isLoading: false
+    }
+};
 
 ReactDOM.render(
-    <Provider store={createStoreWithMiddleware(reducers)}>
+    <Provider store={createStoreWithMiddleware(reducers,initialState)}>
         <App/>
     </Provider>
 , document.getElementById('root'));

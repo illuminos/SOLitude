@@ -51,6 +51,9 @@ body{
 #location{
   background-color: rgba(107, 107, 107, 0.21);
   font-family: 'Lato',sans-serif;
+  .ui.label{
+    background-color: darken($orange,10);
+  }
   h3{
     color: #e6e6e6;
     //font-family: 'Alegreya',sans-serif;

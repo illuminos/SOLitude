@@ -39,9 +39,6 @@ module.exports = {
         }),
     ],
     devServer: {
-        headers: {
-            'Access-Control-Allow-Origin': '*'
-        },
         contentBase: './',
         port: 3000,
         inline: true,
