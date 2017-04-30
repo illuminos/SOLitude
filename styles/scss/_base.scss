@@ -1,0 +1,65 @@
+@font-face{
+  font-family: 'Alegreya';
+}
+
+*{
+  -webkit-font-smoothing: antialiased;
+}
+
+body{
+  //font-family: 'Alegreya','Lato',sans-serif !important;
+  background-color: $extraDark !important;
+}
+
+.container{
+  color: $mediumDark;
+}
+
+.orange{
+  background-color: $orange;
+}
+.red{
+  background-color: $red;
+}
+
+.battery{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.capsule{
+  width: 200px;
+  height: 400px;
+  border: 10px solid $red;
+  border-radius: 10px;
+  position: relative;
+  .fill_capsule{
+    background-color: $orange;
+    width:100%;
+    height:100%;
+    //border-radius: 3px;
+  }
+}
+
+.terminal{
+  width: 50px;
+  height: 10px;
+  background-color: $red;
+  border-radius: 2px 2px 0px 0px;
+}
+
+#location{
+  background-color: rgba(107, 107, 107, 0.21);
+  font-family: 'Lato',sans-serif;
+  h3{
+    color: #e6e6e6;
+    //font-family: 'Alegreya',sans-serif;
+  }
+  button:active{
+    background-color:darken($red,10)!important;
+  }
+}
+
+#logo{
+  width: 150px;
+}

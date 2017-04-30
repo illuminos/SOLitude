@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya');
+
+//@include border-box-sizing;
+
+$susy:(
+	columns: 12,
+	gutters: 0,
+	math: fluid,
+	output: float,
+	gutter-position: inside,
+	global-box-sizing: border-box,
+);
+
+$breakpoints:(
+	'nothing': 0px,
+	'iphone4': 320px,
+	'iphone6': 640px,
+	'crt': 1024px,
+	'laptop': 1280px,
+	'medium': 1680px,
+	'large': 1920px
+);
+
+$border-radius: 0.28571429rem;
+
+//*****COLORS******//
+$extraDark: #001a35; //#002635;
+$mediumDark: #013440;
+$red: #AB1A25;
+$orange: #D97925;
+$cream: #EFE7BE;
