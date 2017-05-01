@@ -8,8 +8,8 @@ const SOLCAST_URL =
 export const FETCH_INSOLATION = 'FETCH_INSOLATION';
 export const FETCH_LOCATION = 'FETCH_LOCATION';
 export const START_LOADER = 'START_LOADER';
-export const ENABLE_DEVICE = 'ENABLE_DEVICE';
-export const UPDATE_BATTERY = 'UPDATE_BATTERY';
+export const TOGGLE_DEVICE = 'TOGGLE_DEVICE';
+
 
 export function fetchInsolation(latitude,longitude){
     const url=`${NREL_URL}&lat=${latitude}&lon=${longitude}`;
@@ -52,16 +52,10 @@ export function fetchLocation(){
     }
 }
 
-export function enableDevice(id){
+export function toggleDevice(id){
     return{
-        type: ENABLE_DEVICE,
+        type: TOGGLE_DEVICE,
         payload: id
     }
 }
 
-export function updateBattery(){
-    return{
-        type: UPDATE_BATTERY,
-        payload: null
-    }
-}

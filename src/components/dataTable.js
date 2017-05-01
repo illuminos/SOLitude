@@ -3,7 +3,7 @@ import { Button, Checkbox, Icon, Table } from 'semantic-ui-react'
 import {Scrollbars} from 'react-custom-scrollbars';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {enableDevice,updateBattery} from '../actions/index';
+import {toggleDevice} from '../actions/index';
 
 class DataTable extends Component{
     constructor(props){
@@ -13,8 +13,7 @@ class DataTable extends Component{
     }
 
     toggle(){
-        this.props.enableDevice(arguments[0]-1);
-        this.props.updateBattery();
+        this.props.toggleDevice(arguments[0]-1);
     }
 
     render(){
@@ -31,10 +30,10 @@ class DataTable extends Component{
                 </Table.Row>
             </Table.Header>
             <Table.Body>
-                {this.state.data.map((item)=>{
+                {this.state.data.map((item,id)=>{
                 return <Table.Row key={item.id}>
                 <Table.Cell>
-                <Checkbox toggle onChange={this.toggle.bind(this,item.id)} checked={item.enabled}/>
+                <Checkbox toggle onChange={this.toggle.bind(this,item.id)} checked={this.props.data[id].enabled}/>
                 </Table.Cell>
                 <Table.Cell>{item.name}</Table.Cell>
                 <Table.Cell>{item.function}</Table.Cell>
@@ -54,7 +53,7 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch){
-    return bindActionCreators({enableDevice,updateBattery}, dispatch);
+    return bindActionCreators({toggleDevice}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(DataTable);

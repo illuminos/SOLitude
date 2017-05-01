@@ -43,6 +43,7 @@ function calculatePercentage(data){
 }
 
 function mapStateToProps(state){
+    console.log(state.data);
     var data = calculatePercentage(state.data);
     console.log(data);
     return {percentage: data[0], capacity: data[1]};

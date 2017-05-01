@@ -22,8 +22,7 @@ const initialState = {
     location: {
         isLoading: false
     },
-    data: data,
-    battery: 100
+    data: data
 };
 
 ReactDOM.render(
