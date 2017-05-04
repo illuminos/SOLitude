@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import Battery from '../components/battery';
 import Solitude from '../components/solitude_logo';
 import DataEntry from '../containers/data_entry';
-import {Message} from 'semantic-ui-react';
+import {Message,Icon,Popup} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 
 
@@ -13,6 +13,10 @@ class HISEAS extends Component{
     render(){
         return <div id="hiseas">
             <div className="logo" style={{height: "120px"}}>
+                <Popup
+                    trigger={<Icon name="settings" size="huge" style={{position:"absolute", right:"7%"}}/>}>
+                    I'm still working on this..So it will be updated soon !
+                </Popup>
                 <Solitude size="30%" style={{fill: "#EFE7BE",marginTop:"10px"}} face="orange"/>
                 <h3 style={{marginTop:"-10px"}}>Location: Mauna Loa, Hawaii</h3>
             </div>
@@ -39,7 +43,7 @@ function calculatePercentage(data){
     }
     console.log(totalConsumption);
     let finalPercentage =((capacity-totalConsumption)*100/capacity).toString();
-    return [(finalPercentage>0 ? finalPercentage: "0")+'%',capacity];
+    return [(finalPercentage>0 ? finalPercentage: "0"),capacity];
 }
 
 function mapStateToProps(state){

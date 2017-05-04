@@ -34,11 +34,12 @@ module.exports = {
         new ExtractTextPlugin("styles.css"),
         new webpack.DefinePlugin({
             "process.env": { 
-                NODE_ENV: JSON.stringify("development")
+                NODE_ENV: JSON.stringify("production")
             }
         }),
     ],
     devServer: {
+        disableHostCheck: true,
         contentBase: './',
         port: 3000,
         inline: true,

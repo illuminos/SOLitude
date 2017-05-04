@@ -22,7 +22,7 @@ const initialState = {
     location: {
         isLoading: false
     },
-    data: data
+    data: data.reverse()
 };
 
 ReactDOM.render(

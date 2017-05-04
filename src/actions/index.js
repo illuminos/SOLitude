@@ -9,6 +9,7 @@ export const FETCH_INSOLATION = 'FETCH_INSOLATION';
 export const FETCH_LOCATION = 'FETCH_LOCATION';
 export const START_LOADER = 'START_LOADER';
 export const TOGGLE_DEVICE = 'TOGGLE_DEVICE';
+export const UPDATE_TABLE = 'UPDATE_TABLE';
 
 
 export function fetchInsolation(latitude,longitude){
@@ -56,6 +57,13 @@ export function toggleDevice(id){
     return{
         type: TOGGLE_DEVICE,
         payload: id
+    }
+}
+
+export function updateTable(row){
+    return {
+        type: UPDATE_TABLE,
+        payload: row
     }
 }
 

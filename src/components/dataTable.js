@@ -4,6 +4,7 @@ import {Scrollbars} from 'react-custom-scrollbars';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {toggleDevice} from '../actions/index';
+import _ from 'lodash';
 
 class DataTable extends Component{
     constructor(props){
@@ -13,11 +14,11 @@ class DataTable extends Component{
     }
 
     toggle(){
-        this.props.toggleDevice(arguments[0]-1);
+        this.props.toggleDevice(arguments[0]);
     }
 
     render(){
-        return <Scrollbars style={{ height: 500 }}>
+        return <Scrollbars>
             <Table compact celled definition striped>
             <Table.Header>
                 <Table.Row>
@@ -30,10 +31,10 @@ class DataTable extends Component{
                 </Table.Row>
             </Table.Header>
             <Table.Body>
-                {this.state.data.map((item,id)=>{
+                {this.props.data.map((item,id)=>{
                 return <Table.Row key={item.id}>
                 <Table.Cell>
-                <Checkbox toggle onChange={this.toggle.bind(this,item.id)} checked={this.props.data[id].enabled}/>
+                <Checkbox toggle onChange={this.toggle.bind(this,id)} checked={this.props.data[id].enabled}/>
                 </Table.Cell>
                 <Table.Cell>{item.name}</Table.Cell>
                 <Table.Cell>{item.function}</Table.Cell>
